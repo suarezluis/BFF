@@ -30,6 +30,7 @@ router.post("/register", (req, res) => {
         avatar,
         password: req.body.password
       });
+
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
@@ -43,4 +44,29 @@ router.post("/register", (req, res) => {
     }
   });
 });
+
+// @route GET to api/users/login
+// @description Login User / returning JWT token
+// @access Public
+router.post("/login", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  //Find user by email
+  User.findOne({ email }).then(user => {
+    //Check if there is a user with that email
+    if (!user) {
+      return res.status(404).json({ email: "User not found" });
+    }
+    //Check if password match
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        res.json({ msg: "Login Success" });
+      } else {
+        return res.status(400).json({ password: "Password is Incorrect" });
+      }
+    });
+  });
+});
+
 module.exports = router;
