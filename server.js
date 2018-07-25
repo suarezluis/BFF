@@ -1,6 +1,8 @@
 const express = require("express"); // To create a server
 const mongoose = require("mongoose"); // To use mongoose and deal with mongodb
 const bodyParser = require("body-parser"); // To be able to use req.body
+const passport = require("passport");
+
 const users = require("./routes/api/users"); // Route users
 const profile = require("./routes/api/profile"); // Route profile
 const posts = require("./routes/api/posts"); // route posts
@@ -23,7 +25,11 @@ mongoose
   .then(() => console.log("🍺  MongoDB Connected to DataBase ✔"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Hello World"));
+//Passport middleware
+app.use(passport.initialize());
+
+//Passport Config
+require("./config/passport")(passport);
 
 // Use Routes
 app.use("/api/users", users);
