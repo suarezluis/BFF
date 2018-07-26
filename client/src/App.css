@@ -112,3 +112,7 @@ footer {
   bottom: 0;
   left: 0;
 }
+
+.icon:hover {
+  color: goldenrod !important;
+}

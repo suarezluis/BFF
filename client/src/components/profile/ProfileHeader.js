@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import isEmpty from '../../validation/is-empty';
+import React, { Component } from "react";
+import isEmpty from "../../validation/is-empty";
 
 class ProfileHeader extends Component {
   render() {
@@ -21,7 +21,7 @@ class ProfileHeader extends Component {
             <div className="text-center">
               <h1 className="display-4 text-center">{profile.user.name}</h1>
               <p className="lead text-center">
-                {profile.status}{' '}
+                {profile.status}{" "}
                 {isEmpty(profile.company) ? null : (
                   <span>at {profile.company}</span>
                 )}
@@ -30,7 +30,7 @@ class ProfileHeader extends Component {
               <p>
                 {isEmpty(profile.website) ? null : (
                   <a
-                    className="text-white p-2"
+                    className="text-white p-2 icon"
                     href={profile.website}
                     target="_blank"
                   >
@@ -40,7 +40,7 @@ class ProfileHeader extends Component {
 
                 {isEmpty(profile.social && profile.social.twitter) ? null : (
                   <a
-                    className="text-white p-2"
+                    className="text-white p-2 icon"
                     href={profile.social.twitter}
                     target="_blank"
                   >
@@ -50,7 +50,7 @@ class ProfileHeader extends Component {
 
                 {isEmpty(profile.social && profile.social.facebook) ? null : (
                   <a
-                    className="text-white p-2"
+                    className="text-white p-2 icon"
                     href={profile.social.facebook}
                     target="_blank"
                   >
@@ -60,7 +60,7 @@ class ProfileHeader extends Component {
 
                 {isEmpty(profile.social && profile.social.linkedin) ? null : (
                   <a
-                    className="text-white p-2"
+                    className="text-white p-2 icon"
                     href={profile.social.linkedin}
                     target="_blank"
                   >
@@ -70,7 +70,7 @@ class ProfileHeader extends Component {
 
                 {isEmpty(profile.social && profile.social.youtube) ? null : (
                   <a
-                    className="text-white p-2"
+                    className="text-white p-2 icon"
                     href={profile.social.youtube}
                     target="_blank"
                   >
@@ -80,7 +80,7 @@ class ProfileHeader extends Component {
 
                 {isEmpty(profile.social && profile.social.instagram) ? null : (
                   <a
-                    className="text-white p-2"
+                    className="text-white p-2 icon"
                     href={profile.social.instagram}
                     target="_blank"
                   >
