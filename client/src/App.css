@@ -5,6 +5,7 @@ body {
   background: url("/showcase.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
 }
 
 img {
@@ -101,4 +102,11 @@ a:hover {
 .btn {
   outline: none;
   border: none;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
