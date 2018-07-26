@@ -1,31 +1,26 @@
 {
-  "name": "bff",
+  "name": "devconnector",
   "version": "1.0.0",
-  "description": "",
+  "description": "Social network for developers",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/suarezluis/BFF.git"
-  },
-  "author": "Luis Suarez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/suarezluis/BFF/issues"
-  },
-  "homepage": "https://github.com/suarezluis/BFF#readme",
+  "author": "Brad Traversy",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "gravatar": "^1.6.0",
-    "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.5",
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^5.0.12",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "validator": "^10.4.0"
+    "validator": "^9.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
   }
 }

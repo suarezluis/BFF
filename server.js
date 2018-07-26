@@ -1,11 +1,11 @@
-const express = require("express"); // To create a server
-const mongoose = require("mongoose"); // To use mongoose and deal with mongodb
-const bodyParser = require("body-parser"); // To be able to use req.body
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const passport = require("passport");
 
-const users = require("./routes/api/users"); // Route users
-const profile = require("./routes/api/profile"); // Route profile
-const posts = require("./routes/api/posts"); // route posts
+const users = require("./routes/api/users");
+const profile = require("./routes/api/profile");
+const posts = require("./routes/api/posts");
 
 const app = express();
 
@@ -18,17 +18,14 @@ const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true } //Added { useNewUrlParser: true } to avoid: DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
-  )
+  .connect(db)
   .then(() => console.log("🍺  MongoDB Connected to DataBase ✔"))
   .catch(err => console.log(err));
 
-//Passport middleware
+// Passport middleware
 app.use(passport.initialize());
 
-//Passport Config
+// Passport Config
 require("./config/passport")(passport);
 
 // Use Routes
